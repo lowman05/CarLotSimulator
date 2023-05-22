@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
 
 namespace CarLotSimulator
 {
@@ -6,6 +10,74 @@ namespace CarLotSimulator
     {
         static void Main(string[] args)
         {
+            var cars = new List<Car>();
+            
+
+            var honda = new Car();
+            honda.Year = 2003;
+            honda.Make = "Honda";
+            honda.Model = "Civic";
+
+            cars.Add(honda); 
+
+            var chevrolet = new Car();
+            chevrolet.Year = 2015;
+            chevrolet.Make = "Chevrolet";
+            chevrolet.Model = "Cobalt";
+
+            cars.Add(chevrolet); 
+            
+
+            var ford = new Car();
+            ford.Year = 2003;
+            ford.Make = "Ford";
+            ford.Model = "Focus";
+
+            cars.Add(ford);                     
+
+            
+
+            var toyota = new Car();
+            toyota.Year = 2013;
+            toyota.Make = "Toyota";
+            toyota.Model = "Corolla";
+            toyota.EngineNoise = "hum";
+            toyota.HonkNoise = "beep";
+            toyota.IsDriveable = true;
+
+            cars.Add(toyota);
+
+            toyota.MakeEngineNoise();
+            toyota.MakeHonkNoise();
+
+
+
+            var kia = new Car()
+            {
+                Year = 2015,
+                Make = "Kia",
+                Model = "Sedona",
+                EngineNoise = "clanky",
+                HonkNoise = "squeak",
+                IsDriveable = true,
+            };
+            cars.Add(kia); 
+
+            kia.MakeEngineNoise();
+            kia.MakeHonkNoise();
+
+            var mazda = new Car(2008, "Mazda", "Three", "click", "shriek", true);
+            cars.Add(mazda);
+
+            mazda.MakeEngineNoise();
+            mazda.MakeHonkNoise();
+
+            foreach (var car in cars)
+            {
+                Console.WriteLine($"{car.Make}, {car.Model}, {car.Year}");
+            }
+
+
             //TODO
 
             //Create a seperate class file called Car
