@@ -77,6 +77,9 @@ namespace CarLotSimulator
                 Console.WriteLine($"{car.Make}, {car.Model}, {car.Year}");
             }
 
+            CarLot._numberOfCars = cars.Count;
+            Console.WriteLine($"The number of cars in the carlot is { CarLot._numberOfCars}.");
+
 
             //TODO
 
